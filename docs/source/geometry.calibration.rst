@@ -130,3 +130,30 @@ Perspective-n-Point (PnP)
 -------------------------
 
 .. autofunction:: solve_pnp_dlt
+
+Multi-view camera calibration
+------------------------------
+
+Fit the intrinsics, lens coefficients and one world-to-camera pose per view from the world-to-pixel
+correspondences of several views. :func:`calibrate_camera` fits an OpenCV Brown-Conrady pinhole camera and
+:func:`calibrate_fisheye` a Kannala-Brandt fisheye camera; both return a :class:`CalibrationResult` that is bound
+to a camera id, an image size and a distortion tier, carries per-view diagnostics and the inlier points, and
+reports a re-projection error computed through the same projection functions the rest of the library consumes.
+A calibration that the observations cannot support returns ``success=False`` with named reasons instead of
+raising a low-level linear algebra error. Several cameras are calibrated independently, with their own
+initialization, inliers and failure state, by :func:`calibrate_cameras`.
+
+.. autofunction:: calibrate_camera
+
+.. autofunction:: calibrate_fisheye
+
+.. autofunction:: calibrate_cameras
+
+.. autoclass:: CalibrationObservations
+   :members:
+
+.. autoclass:: CalibrationResult
+   :members:
+
+.. autoclass:: ViewDiagnostics
+   :members:
