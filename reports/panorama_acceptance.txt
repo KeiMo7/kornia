@@ -1,0 +1,22 @@
+PanoramaStitcher acceptance report
+torch 2.14.1+cpu, threads 8
+
+[1] Seam discontinuity (mean abs jump on the seam ring)
+    before = 0.067797  after = 0.010925  reduction = 83.9%
+[2] Same-material overlap luma difference
+    before = 0.126037  after = 0.000078  reduction = 99.9%
+    clipped under/over fractions = (0.0, 0.0)
+
+[3] Matching-failure rejection
+    StitchingError: pair (0, 1): 3 matched keypoints, a homography needs 4
+    StitchingError: pair (0, 1): overlap is 0.0000 of the smaller image (0 px), min_overlap_fraction is 0.05
+
+[4] Two independent runs are bit-identical: True
+
+[5] Seam review crops saved to reports/panorama_seam_slices.pt (before (1, 3, 48, 80), after (1, 3, 48, 40))
+    Existing ImageStitcher behavior: run pytest tests/contrib/test_image_stitcher.py separately.
+
+[extra] 3-image chain: seam after = 0.010316, luma after = 0.000023, overlap fractions = [0.375, 0.375]
+[extra] Order-swap seam delta (AB vs BA): 0.005467
+[extra] Fusion-only mode (no matcher call): panorama (1, 3, 48, 96), mask coverage 1.000
+[extra] Mean fusion-only time over 5 runs on (1,3,224,224) pairs: 8.7 ms

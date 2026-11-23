@@ -64,6 +64,18 @@ from .image_stitching import ImageStitcher
 from .kmeans import KMeans
 from .lambda_module import Lambda
 from .object_detection import ObjectDetector, RTDETRDetectorBuilder
+from .panorama import (
+    PanoramaStitcher,
+    SeamSlices,
+    StitchingError,
+    StitchQuality,
+    boundary_distance,
+    estimate_pair_gain,
+    feather_weights,
+    fuse_panorama,
+    overlap_luma_difference,
+    seam_discontinuity,
+)
 from .super_resolution import RRDBNetBuilder, SmallSRBuilder, SuperResolution, SuperResolutionConfig
 
 __all__ = [
@@ -78,21 +90,31 @@ __all__ = [
     "KMeans",
     "Lambda",
     "ObjectDetector",
+    "PanoramaStitcher",
     "RRDBNetBuilder",
     "RTDETRDetectorBuilder",
+    "SeamSlices",
     "SmallSRBuilder",
     "SpatialAudit",
+    "StitchQuality",
+    "StitchingError",
     "SuperResolution",
     "SuperResolutionConfig",
     "TinyViT",
     "audit",
+    "boundary_distance",
     "combine_tensor_patches",
     "compute_padding",
     "connected_components",
     "connected_components_union_find",
     "diamond_square",
     "distance_transform",
+    "estimate_pair_gain",
     "extract_tensor_patches",
+    "feather_weights",
+    "fuse_panorama",
     "histogram_matching",
     "interp",
+    "overlap_luma_difference",
+    "seam_discontinuity",
 ]

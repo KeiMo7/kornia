@@ -344,6 +344,33 @@ Image Stitching
 
 .. autoclass:: ImageStitcher
 
+Panorama Stitching
+------------------
+
+.. autoclass:: PanoramaStitcher
+    :members:
+
+.. autoclass:: StitchQuality
+    :members:
+
+.. autoclass:: SeamSlices
+    :members:
+
+.. autoclass:: StitchingError
+    :members:
+
+.. autofunction:: boundary_distance
+
+.. autofunction:: estimate_pair_gain
+
+.. autofunction:: feather_weights
+
+.. autofunction:: fuse_panorama
+
+.. autofunction:: seam_discontinuity
+
+.. autofunction:: overlap_luma_difference
+
 Lambda
 ------
 
